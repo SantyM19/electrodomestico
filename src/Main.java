@@ -3,9 +3,17 @@ import entity.Nevera;
 import entity.Tv;
 import entity.valueObject.Consumo;
 import entity.valueObject.Procedencia;
+import util.Menu;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        List<Electrodomestico> electrodomesticos = new ArrayList<>();
+
+        electrodomesticos = Menu.construirElectro();
 
         Electrodomestico microH = new Electrodomestico(Consumo.A, Procedencia.INTERNACIONAL);
 
