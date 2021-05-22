@@ -12,6 +12,10 @@ public class Electrodomestico {
     public Electrodomestico(Consumo consumo, Procedencia procedencia) {
         this.consumoPrecio = consumo.getConsumo();  // 25000 3500 -> key
         this.procedenciaPrecio = procedencia.getRecargo() * 1.0;
+
+        //this.total = this.consumoPrecio + this.procedenciaPrecio;
+        //this.total = consumo.getConsumo() + procedencia.getRecargo();
+
         this.total = getConsumoPrecio() + getProcedenciaPrecio();
     }
 

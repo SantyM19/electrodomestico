@@ -5,9 +5,9 @@ import entity.valueObject.Procedencia;
 
 public class Tv extends Electrodomestico{
     double tamaño;
-    Boolean tdt;
+    boolean tdt;
 
-    public Tv(Consumo consumo, Procedencia procedencia, double tamaño, Boolean tdt) {
+    public Tv(Consumo consumo, Procedencia procedencia, double tamaño, boolean tdt) {
         super(consumo, procedencia);
         this.tamaño = tamaño;
         this.tdt = tdt;
@@ -15,14 +15,19 @@ public class Tv extends Electrodomestico{
     }
 
 
-    public Double setTotal(double total, double tamaño, Boolean tdt){
+    public Double setTotal(double total, double tamaño, boolean tdt){
         double tot = total;
 
+        tot = (tamaño > 40) ? tot += tot * 0.3: tot ;
+        tot = (tdt) ? tot += 250000: tot ;
+
+        /*
         if (tamaño > 40)
-            tot = tot + tot * 0.3;
+            tot += tot * 0.3;
 
         if (tdt)
-            tot = tot + 250000;
+            tot += 250000;
+        */
 
         return tot;
     }
