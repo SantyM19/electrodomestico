@@ -22,7 +22,7 @@ public class Nevera extends Electrodomestico{
             tot = tot + tot * 0.05 * more;
         */
 
-        this.setTotal((capacidad > 120.0)?tot += + tot * 0.05 * more:tot);
+        this.setTotal((capacidad > 120.0)? tot += tot * 0.05 * more : tot);
     }
 
 
