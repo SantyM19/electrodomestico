@@ -9,11 +9,9 @@ public class Main {
 
         Electrodomestico microH = new Electrodomestico(Consumo.A, Procedencia.INTERNACIONAL);
 
-
         Nevera nevera = new Nevera ('B',"Importado",130.0);
 
-
-        Tv tv = new Tv('C',"Nacional",40,true);
+        Tv tv = new Tv(Consumo.B,Procedencia.NACIONAL,40,true);
 
         System.out.println(microH.getTotal());
     }
