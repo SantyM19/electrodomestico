@@ -5,25 +5,21 @@ import entity.valueObject.Procedencia;
 
 public class Electrodomestico {
 
-    private final Integer consumoPrecio;
-    private final Integer procedenciaPrecio;
+    private final Double consumoPrecio;
+    private final Double procedenciaPrecio;
     private Double total;
 
-
-    Consumo consumo = new Consumo();
-    Procedencia procedencia = new Procedencia();
-
-    public Electrodomestico(Character con, String pro) {
-        this.consumoPrecio = consumo.getConsumo(con);  // 25000 3500 -> key
-        this.procedenciaPrecio = procedencia.getProcedencia(pro);
-        this.total = consumo.getConsumo(con) + procedencia.getProcedencia(pro) + 0.0;
+    public Electrodomestico(Consumo consumo, Procedencia procedencia) {
+        this.consumoPrecio = consumo.getConsumo();  // 25000 3500 -> key
+        this.procedenciaPrecio = procedencia.getRecargo() * 1.0;
+        this.total = getConsumoPrecio() + getProcedenciaPrecio();
     }
 
-    public Integer getConsumoPrecio() {
+    public Double getConsumoPrecio() {
         return consumoPrecio;
     }
 
-    public Integer getProcedenciaPrecio() {
+    public Double getProcedenciaPrecio() {
         return procedenciaPrecio;
     }
 

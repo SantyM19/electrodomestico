@@ -1,16 +1,20 @@
 package entity;
 
+import entity.valueObject.Consumo;
+import entity.valueObject.Procedencia;
+
 public class Tv extends Electrodomestico{
     double tamaño;
     Boolean tdt;
 
-    public Tv(Character con, String pro, double tamaño, Boolean tdt) {
-        super(con, pro);
+    public Tv(Consumo consumo, Procedencia procedencia, double tamaño, Boolean tdt) {
+        super(consumo, procedencia);
         this.tamaño = tamaño;
         this.tdt = tdt;
         this.setTotal(getTotal(consumo.getConsumo(con),procedencia.getProcedencia(pro),tamaño, tdt));
 
     }
+
 
     public Double getTotal(Integer con,Integer pro, double tamaño, Boolean tdt){
         double total = con + pro + 0.0;

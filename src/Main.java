@@ -1,11 +1,13 @@
 import entity.Electrodomestico;
 import entity.Nevera;
 import entity.Tv;
+import entity.valueObject.Consumo;
+import entity.valueObject.Procedencia;
 
 public class Main {
     public static void main(String[] args) {
 
-        Electrodomestico microH = new Electrodomestico('A',"Nacional");
+        Electrodomestico microH = new Electrodomestico(Consumo.A, Procedencia.INTERNACIONAL);
 
 
         Nevera nevera = new Nevera ('B',"Importado",130.0);
@@ -13,6 +15,6 @@ public class Main {
 
         Tv tv = new Tv('C',"Nacional",40,true);
 
-        System.out.println(nevera.getTotal());
+        System.out.println(microH.getTotal());
     }
 }

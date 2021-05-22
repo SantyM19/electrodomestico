@@ -1,19 +1,15 @@
 package entity.valueObject;
 
-import java.util.HashMap;
+public enum Procedencia {
+    NACIONAL(250000), INTERNACIONAL(350000);
 
-public class Procedencia {
+    private final int recargo;
 
-    private final HashMap<String, Integer> procedencia = new HashMap<String, Integer>();
-
-    public Procedencia() {
-
-        procedencia.put("Nacional", 250000);
-        procedencia.put("Importado", 350000);
-
+    Procedencia(int recargo) {
+        this.recargo = recargo;
     }
 
-    public Integer getProcedencia(String pro){
-        return procedencia.get(pro);
+    public int getRecargo() {
+        return recargo;
     }
 }
