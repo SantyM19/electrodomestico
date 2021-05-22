@@ -21,6 +21,17 @@ public class Menu {
 
         String num_electros = myObj.nextLine();  // Read
 
+        electrodomesticos.addAll(listElectro(num_electros));
+
+
+        return electrodomesticos;
+    }
+
+    private static List<Electrodomestico> listElectro(String num_electros) {
+
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        List<Electrodomestico> electrodomesticos = new ArrayList<>();
+
         for (int i=0; Integer.parseInt(num_electros) > i ; i++){
             System.out.println(i);
             System.out.println("Introduce el tipo de \n" +
@@ -31,30 +42,28 @@ public class Menu {
 
             String tipo = myObj.nextLine();  // Read
 
-            switch (tipo){
-                case "1":
-                    electrodomesticos.add(new Tv(seleccionarConsumo(), seleccionarProcedencia(),seleccionarTamaño(),siTdt()));
-                    System.out.println("TV Creado");
-                    break;
-                case "2":
-                    electrodomesticos.add(new Nevera(seleccionarConsumo(), seleccionarProcedencia(),seleccionarCapacidad()));
-                    System.out.println("Nevera Creada");
-                    break;
-                case "3":
-                    electrodomesticos.add(new Electrodomestico(seleccionarConsumo(), seleccionarProcedencia()));
-                    System.out.println("Electrodoméstico Creado");
-                    break;
-                default:
-                    System.out.println("Opcion Errada \n" +
-                            "Ingresa un numero correcto");
-                    i--;
-                    break;
-
-            }
+            electrodomesticos.add(seleccionarElectro(tipo));
 
         }
 
         return electrodomesticos;
+    }
+
+    private static Electrodomestico seleccionarElectro(String tipo) {
+        switch (tipo){
+            case "1":
+                System.out.println("TV Creado");
+                return new Tv(seleccionarConsumo(), seleccionarProcedencia(),seleccionarTamaño(),siTdt());
+
+            case "2":
+                System.out.println("Nevera Creada");
+                return new Nevera(seleccionarConsumo(), seleccionarProcedencia(),seleccionarCapacidad());
+
+            default:
+                System.out.println("Electrodoméstico Creado");
+                return new Electrodomestico(seleccionarConsumo(), seleccionarProcedencia());
+
+        }
     }
 
     public static double seleccionarCapacidad(){
@@ -108,7 +117,7 @@ public class Menu {
     public static Consumo seleccionarConsumo(){
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Introduce el tipo de consumo\n " +
-                "A\n B\n C");
+                "A\n B\n Other C por defecto");
 
         String consumo = myObj.nextLine();
 
@@ -124,9 +133,6 @@ public class Menu {
             case "B":
                 System.out.println("B");
                 return Consumo.B;
-            case "C":
-                System.out.println("C");
-                return Consumo.C;
             default:
                 System.out.println("Opcion Errada \n" +
                         "C por defecto");
