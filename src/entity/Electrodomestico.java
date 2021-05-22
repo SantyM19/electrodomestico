@@ -35,4 +35,12 @@ public class Electrodomestico {
         this.total = total;
     }
 
+    @Override
+    public String toString() {
+        return "Electrodoméstico: " +
+                "\n consumoPrecio = " + consumoPrecio +
+                "\n procedenciaPrecio = " + procedenciaPrecio +
+                "\n total = " + total +
+                '\n';
+    }
 }

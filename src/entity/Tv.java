@@ -30,4 +30,12 @@ public class Tv extends Electrodomestico{
         */
         this.setTotal(tot);
     }
+    @Override
+    public String toString() {
+        return "Tv" +
+                "\n consumoPrecio = " + getConsumoPrecio() +
+                "\n procedenciaPrecio = " + getProcedenciaPrecio() +
+                "\n total = " + getTotal() +
+                '\n';
+    }
 }

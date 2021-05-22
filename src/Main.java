@@ -1,8 +1,4 @@
 import entity.Electrodomestico;
-import entity.Nevera;
-import entity.Tv;
-import entity.valueObject.Consumo;
-import entity.valueObject.Procedencia;
 import util.Menu;
 
 import java.util.ArrayList;
@@ -15,12 +11,12 @@ public class Main {
 
         electrodomesticos = Menu.construirElectro();
 
-        Electrodomestico microH = new Electrodomestico(Consumo.A, Procedencia.INTERNACIONAL);
-
-        Nevera nevera = new Nevera (Consumo.C, Procedencia.INTERNACIONAL,130.0);
-
-        Tv tv = new Tv(Consumo.B,Procedencia.NACIONAL,40,true);
-
-        System.out.println(tv.getTotal());
+        System.out.println("==========================================");
+        System.out.println("=       Lista de Electrodomesticos       =");
+        System.out.println("==========================================");
+        for(Electrodomestico electro : electrodomesticos){
+            System.out.println(electro.toString());
+        }
+        System.out.println("==========================================");
     }
 }

@@ -25,5 +25,12 @@ public class Nevera extends Electrodomestico{
         this.setTotal((capacidad > 120.0)? tot += tot * 0.05 * more : tot);
     }
 
-
+    @Override
+    public String toString() {
+        return "Nevera" +
+                "\n consumoPrecio = " + getConsumoPrecio() +
+                "\n procedenciaPrecio = " + getProcedenciaPrecio() +
+                "\n total = " + getTotal() +
+                '\n';
+    }
 }
